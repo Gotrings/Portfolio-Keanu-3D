@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Github, Youtube, Linkedin, Instagram, Send } from 'lucide-react';
+import gridPattern from '@/assets/grid.svg';
 
 const translations = {
   id: {
@@ -95,7 +96,13 @@ export default function Contact({ language = 'id' }: ContactProps) {
     <section id="contact" className="py-20 bg-background relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 -z-10 opacity-10">
-        <div className="absolute inset-0 bg-[url('/src/assets/grid.svg')] [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: `url(${gridPattern})`,
+            maskImage: 'linear-gradient(180deg, white, rgba(255, 255, 255, 0))'
+          }}
+        />
       </div>
       <div className="container mx-auto px-6 relative">
         <motion.div

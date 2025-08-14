@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button';
 
 const translations = {
   id: {
-    copyright: '© 2024 Keanu Dustin Kemala. Dibuat dengan',
+    copyright: '© 2025 Keanu Dustin Kemala. Dibuat dengan',
     rights: 'Semua hak dilindungi.',
     backToTop: 'Kembali ke atas'
   },
   en: {
-    copyright: '© 2024 Keanu Dustin Kemala. Made with',
+    copyright: '© 2025 Keanu Dustin Kemala. Made with',
     rights: 'All rights reserved.',
     backToTop: 'Back to top'
   }
@@ -30,23 +30,6 @@ export default function Footer({ language = 'id' }: FooterProps) {
     <footer className="relative py-12 bg-muted/30 border-t border-border/20">
       <div className="container mx-auto px-6">
         <div className="text-center space-y-6">
-          {/* Back to Top Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <Button
-              onClick={scrollToTop}
-              variant="outline"
-              size="icon"
-              className="rounded-full glass hover:scale-110 transition-all duration-300 hover:shadow-glow"
-            >
-              <ArrowUp className="h-5 w-5" />
-            </Button>
-          </motion.div>
-
           {/* Copyright */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
