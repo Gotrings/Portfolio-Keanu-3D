@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optimized theme transition */
+:root {
+  --transition-duration: 200ms;
+  --transition-timing: ease-out;
+  
+  /* Aurora animation */
+  --aurora-duration: 15s;
+  --aurora-delay: 0s;
+}
+
+/* Aurora animation */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-aurora {
+  animation: aurora 8s ease-in-out infinite alternate;
+  background-size: 200% 200%;
+  will-change: background-position;
+  border-radius: 50%;
+}
+
+/* Smooth transitions for theme changes */
+.animate-aurora,
+.animate-aurora * {
+  transition: all 0.3s ease;
+}
+
+/* Only transition background and text colors on the html element */
+html {
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing);
+  will-change: background-color, color;
+}
+
+/* Only transition specific properties on elements that need it */
+.transition-colors {
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing);
+}
+
+/* Disable transitions for performance-critical elements */
+canvas, iframe, video, img, svg, .no-transition,
+.three-js-container, .three-js-container * {
+  transition: none !important;
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Portfolio Design System - Light Mode */
+    --background: 240 10% 98%;
+    --foreground: 213 27% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 27% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 27% 20%;
+
+    --primary: 213 73% 35%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 213 73% 45%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 213 27% 20%;
+
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 36 77% 49%;
+    --accent-foreground: 213 27% 20%;
+    --accent-glow: 36 77% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 73% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom Portfolio Colors */
+    --gradient-primary: linear-gradient(135deg, hsl(213 73% 35%), hsl(188 78% 41%));
+    --gradient-secondary: linear-gradient(135deg, hsl(36 77% 49%), hsl(36 77% 65%));
+    --gradient-hero: linear-gradient(to bottom right, hsl(36 77% 49%) 0%, hsl(188 78% 41%) 100%);
+    
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    
+    /* Shadows */
+    --shadow-elegant: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-glow: 0 0 30px rgba(33, 96, 162, 0.2);
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 240 10% 98%;
+    --sidebar-foreground: 213 27% 20%;
+    --sidebar-primary: 213 73% 35%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 213 27% 20%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 213 73% 35%;
+  }
+
+  .dark {
+    /* Portfolio Design System - Dark Mode */
+    --background: 213 31% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 213 27% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 213 27% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 213 73% 55%;
+    --primary-foreground: 213 31% 8%;
+    --primary-glow: 213 73% 65%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 36 77% 55%;
+    --accent-foreground: 213 31% 8%;
+    --accent-glow: 36 77% 70%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 213 73% 55%;
+
+    /* Custom Portfolio Colors - Dark */
+    --gradient-primary: linear-gradient(135deg, hsl(213 73% 45%), hsl(188 78% 51%));
+    --gradient-secondary: linear-gradient(135deg, hsl(36 77% 55%), hsl(36 77% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(213 73% 45%) 0%, hsl(188 78% 51%) 50%, hsl(36 77% 55%) 100%);
+    
+    /* Glass Effects - Dark */
+    --glass-bg: rgba(33, 48, 81, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    /* Shadows - Dark */
+    --shadow-elegant: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 30px rgba(74, 146, 231, 0.3);
+
+    --sidebar-background: 213 31% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 213 73% 55%;
+    --sidebar-primary-foreground: 213 31% 8%;
+    --sidebar-accent: 217 33% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 18%;
+    --sidebar-ring: 213 73% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism utilities */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px) saturate(150%);
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Gradient utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Shadow utilities */
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Animation utilities */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+
+  /* Scroll reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Parallax utilities */
+  .parallax {
+    transform-style: preserve-3d;
+  }
+
+  .parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
