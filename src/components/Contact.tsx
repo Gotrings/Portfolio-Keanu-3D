@@ -100,7 +100,10 @@ export default function Contact({ language = 'id' }: ContactProps) {
           className="absolute inset-0" 
           style={{
             backgroundImage: `url(${gridPattern})`,
-            maskImage: 'linear-gradient(180deg, white, rgba(255, 255, 255, 0))'
+            maskImage: 'linear-gradient(180deg, white, rgba(255, 255, 255, 0))',
+            WebkitMaskImage: 'linear-gradient(180deg, white, rgba(255, 255, 255, 0))',
+            backgroundSize: '20px 20px',
+            backgroundRepeat: 'repeat'
           }}
         />
       </div>

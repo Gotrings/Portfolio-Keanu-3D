@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 
+// Import images
+import keanuImage from '@/assets/keanu.png';
+
 const translations = {
   id: {
     title: 'Tentang Saya',
@@ -91,7 +94,7 @@ export default function About({ language = 'id' }: AboutProps) {
                 {/* Profile image */}
                 <div className="w-full h-full rounded-full overflow-hidden border-4 border-background">
                   <img
-                    src="/src/assets/keanu.png"
+                    src={keanuImage}
                     alt="Keanu Dustin Kemala"
                     className="w-full h-full object-cover"
                   />

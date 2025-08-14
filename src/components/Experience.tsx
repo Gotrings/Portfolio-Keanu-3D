@@ -1,9 +1,29 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, MapPin, Award, Users, Briefcase, X } from 'lucide-react';
+import { Calendar, MapPin, Award, Users, Briefcase } from 'lucide-react';
 import { useState } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+
+// Import images for certificates and experiences
+import Belajar1Images from '@/assets/Belajar Dasar Git dengan GitHub.jpg';
+import Belajar2Images from '@/assets/Belajar Dasar Pemrograman JavaScript.jpg';
+import Belajar3Images from '@/assets/Belajar Back-End Pemula dengan JavaScript.jpg';
+import Belajar4Images from '@/assets/Belajar Dasar Pemrograman Web.jpg';
+import Belajar5Images from '@/assets/Belajar Fundamental Front-End Web Development.jpg';
+import Belajar6Images from '@/assets/Belajar Membuat Front End Web untuk Pemula.jpg';
+import Belajar7Images from '@/assets/Belajar Pengembangan Web Intermediate.jpg';
+import Belajar9Images from '@/assets/Memulai Dasar Pemrograman Untuk Menajdi Pengembang Software.jpg';
+import Belajar10Images from '@/assets/Pengenalan ke Logika Pemrograman.jpg';
+import Belajar11Images from '@/assets/Finacial Literacy.jpg';
+import sertifikat1Images from '@/assets/English Sertificate.jpg';
+import sertifikat2Images from '@/assets/standar-1.jpg';
+import sertifikat3Images from '@/assets/Coding Camp 2025-1.jpg';
+import sertifikat4Images from '@/assets/Coding Camp 2025-2.jpg';
+import sertifikat5Images from '@/assets/Coding Camp 2025-3.jpg';
+import magang1Images from '@/assets/magang-1.jpg';
+import UIUX1Image from '@/assets/UIUX-1.jpg';
+import UIUX2Image from '@/assets/UI-UX-2.jpg';
 
 type ExperienceItem = {
   title: {
@@ -138,7 +158,7 @@ const experienceData: ExperienceData = {
         en: 'Backend Developer Internship at PT Dharma Polimetal'
       },
       skills: ['Laravel', 'Dashboard', 'QR Code', 'Excel'],
-      images: ['/src/assets/magang-1.jpg']
+      images: [magang1Images]
     },
     {
       title: {
@@ -155,7 +175,7 @@ const experienceData: ExperienceData = {
         en: 'Comprehensive certification in UX design process, user research, and prototyping.'
       },
       skills: ['UI Design', 'UX Research', 'Prototyping', 'Usability Testing'],
-      images: ['/src/assets/UIUX-1.jpg', '/src/assets/UI-UX-2.jpg']
+      images: [UIUX1Image, UIUX2Image]
     },
     {
       title: {
@@ -172,7 +192,7 @@ const experienceData: ExperienceData = {
         en: 'Learning how to use Git and GitHub'
       },
       skills: ['Git', 'GitHub'],
-      images: ['/src/assets/Belajar Dasar Git dengan GitHub.jpg']
+      images: [Belajar1Images]
     },
     {
       title: {
@@ -189,7 +209,7 @@ const experienceData: ExperienceData = {
         en: 'Learning javascript working on a web'
       },
       skills: ['JavaScript', 'HTML', 'CSS'],
-      images: ['/src/assets/Belajar Dasar Pemrograman JavaScript.jpg']
+      images: [Belajar2Images]
     },
     {
       title: {
@@ -206,7 +226,7 @@ const experienceData: ExperienceData = {
         en: 'Learning back-end with javascript working on a web'
       },
       skills: ['JavaScript', 'Node.js'],
-      images: ['/src/assets/Belajar Back-End Pemula dengan JavaScript.jpg']
+      images: [Belajar3Images]
     },
     {
       title: {
@@ -223,7 +243,7 @@ const experienceData: ExperienceData = {
         en: 'Learning web programming working on a web'
       },
       skills: ['HTML', 'CSS', 'JavaScript'],
-      images: ['/src/assets/Belajar Dasar Pemrograman Web.jpg']
+      images: [Belajar4Images]
     },
     {
       title: {
@@ -240,7 +260,7 @@ const experienceData: ExperienceData = {
         en: 'Learning front-end with html, css, and javascript working on a web'
       },
       skills: ['HTML', 'CSS', 'JavaScript'],
-      images: ['/src/assets/Belajar Fundamental Front-End Web Development.jpg']
+      images: [Belajar5Images]
     },
     {
       title: {
@@ -257,7 +277,7 @@ const experienceData: ExperienceData = {
         en: 'Learning front-end with html, css, and javascript working on a web'
       },
       skills: ['HTML', 'CSS', 'JavaScript'],
-      images: ['/src/assets/Belajar Membuat Front End Web untuk Pemula.jpg']
+      images: [Belajar6Images]
     },
     {
       title: {
@@ -274,7 +294,7 @@ const experienceData: ExperienceData = {
         en: 'Learning front-end with html, css, and javascript working on a web'
       },
       skills: ['HTML', 'CSS', 'JavaScript', 'Vite', 'Webpack'],
-      images: ['/src/assets/Belajar Pengembangan Web Intermediate.jpg']
+      images: [Belajar7Images]
     },
     {
       title: {
@@ -291,7 +311,7 @@ const experienceData: ExperienceData = {
         en: 'Learning web programming working on a web'
       },
       skills: ['HTML', 'CSS', 'JavaScript'],
-      images: ['/src/assets/Memulai Dasar Pemrograman Untuk Menajdi Pengembang Software.jpg']
+      images: [Belajar9Images]
     },
     {
       title: {
@@ -308,7 +328,7 @@ const experienceData: ExperienceData = {
         en: 'Learning programming logic'
       },
       skills: ['Logic', 'Programming'],
-      images: ['/src/assets/Pengenalan ke Logika Pemrograman.jpg']
+      images: [Belajar10Images]
     },
     {
       title: {
@@ -325,7 +345,7 @@ const experienceData: ExperienceData = {
         en: 'Learning financial literacy'
       },
       skills: ['Financial', 'Literacy'],
-      images: ['/src/assets/Finacial Literacy.jpg']
+      images: [Belajar11Images]
     },
     {
       title: {
@@ -342,7 +362,7 @@ const experienceData: ExperienceData = {
         en: 'Learning English with B1 level'
       },
       skills: ['English'],
-      images: ['/src/assets/English Sertificate.jpg', '/src/assets/standar-1.jpg']
+      images: [sertifikat1Images, sertifikat2Images]
     },
     {
       title: {
@@ -359,7 +379,7 @@ const experienceData: ExperienceData = {
         en: 'Certificate of participation in Coding Camp supported by DBS Foundation 2025'
       },
       skills: ['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript', 'Node.js', 'Deployment', 'Tailwind CSS', 'Git', 'GitHub', 'Vite', 'Radix UI', 'Shadcn UI', 'Figma'],
-      images: ['/src/assets/Coding Camp 2025-1.jpg', '/src/assets/Coding Camp 2025-2.jpg', '/src/assets/Coding Camp 2025-3.jpg']
+      images: [sertifikat3Images, sertifikat4Images, sertifikat5Images]
     },
   ],
   activities: [
