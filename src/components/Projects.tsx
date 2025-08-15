@@ -54,7 +54,7 @@ const projects = [
     id: 2,
     title: 'HIMTECH',
     description: {
-      id: 'Website portfolio kreatif dengan animasi 3D dan desain yang responsif untuk menampilkan karya seni.',
+      id: 'Website profile himpunan teknologi rekayasa perangkat lunak.',
       en: 'Creative portfolio website with 3D animations and responsive design to showcase artwork.'
     },
     category: 'web',

@@ -8,13 +8,13 @@ const translations = {
   id: {
     greeting: 'Halo, saya',
     name: 'Keanu Dustin Kemala',
-    description: 'Menciptakan pengalaman digital yang indah dan fungsional dengan pendekatan yang berpusat pada pengguna. Passion saya adalah menggabungkan kreativitas dengan teknologi untuk menciptakan aplikasi web yang ramah untuk pengguna.',
+    description: 'Seorang profesional dengan keahlian di bidang UI/UX Design serta penguasaan mendalam pada perangkat lunak komputer. Menggabungkan kreativitas dan kemampuan teknis untuk menciptakan solusi digital yang fungsional, estetis, dan berpusat pada pengguna.',
     cta: 'Lihat Karya Saya',
   },
   en: {
     greeting: "Hello, I'm",
     name: 'Keanu Dustin Kemala',
-    description: 'Creating beautiful and functional digital experiences with a user-centered approach. My passion is combining creativity with technology to create user-friendly web applications.',
+    description: 'A professional with expertise in UI/UX Design and a deep understanding of computer software. Combining creativity and technical skills to create functional, aesthetic, and user-centered digital solutions.',
     cta: 'View My Work',
   },
 };
@@ -124,7 +124,7 @@ export default function Hero({ language = 'id' }: HeroProps) {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-16 pb-20 sm:pt-0 sm:pb-0">
       {/* Background Gradient */}
       <div className="absolute inset-0 gradient-hero opacity-90" />
 
@@ -168,7 +168,7 @@ export default function Hero({ language = 'id' }: HeroProps) {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-left space-y-6 w-full lg:w-1/2 px-4 sm:px-0"
+            className="text-left space-y-6 w-full lg:w-1/2 px-2 sm:px-4 lg:px-6"
           >
             {/* Greeting and Name Section */}
             <div className="mb-4 sm:mb-6">
@@ -210,7 +210,7 @@ export default function Hero({ language = 'id' }: HeroProps) {
                 </div>
               </motion.div>
 
-              <div className="h-8 flex items-center">
+              <div className="h-8 flex items-center mb-2 sm:mb-0">
                 <AnimatePresence mode="wait">
                   <motion.div key={language}>
                     <TypingText />
@@ -223,7 +223,7 @@ export default function Hero({ language = 'id' }: HeroProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-base sm:text-lg text-white/65 leading-relaxed max-w-3xl min-h-[60px] sm:min-h-[80px]"
+              className="text-sm sm:text-base md:text-lg text-white/65 leading-relaxed max-w-3xl min-h-[60px] sm:min-h-[80px] pr-2 sm:pr-0"
             >
               {t.description}
             </motion.p>
@@ -232,23 +232,22 @@ export default function Hero({ language = 'id' }: HeroProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 flex-wrap justify-start"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-wrap justify-start mt-2 sm:mt-0 mb-12 sm:mb-0"
             >
               <Button
                 size="lg"
                 onClick={scrollToProjects}
-                className="gradient-primary text-white font-semibold px-8 py-6 rounded-xl shadow-glow hover:scale-105 transition-all duration-300"
+                className="gradient-primary text-white font-semibold px-8 py-6 rounded-xl shadow-glow hover:shadow-glow-lg transition-all duration-300 transform hover:scale-105"
               >
                 {t.cta}
               </Button>
-
               <div className="flex items-center space-x-4">
-                <a href="https://www.linkedin.com/in/keanu-dustin-kemala/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <a href="https://www.linkedin.com/in/keanudustin/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <Button variant="outline" size="icon" className="h-12 w-12 rounded-xl hover:bg-blue-100 transition-colors">
                     <Linkedin className="h-5 w-5" />
                   </Button>
                 </a>
-                <a href="https://www.instagram.com/captathings/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <a href="https://www.instagram.com/keanudustin/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <Button variant="outline" size="icon" className="h-12 w-12 rounded-xl hover:bg-pink-100 transition-colors">
                     <Instagram className="h-5 w-5" />
                   </Button>
@@ -267,7 +266,7 @@ export default function Hero({ language = 'id' }: HeroProps) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[500px] order-2 lg:order-1"
+            className="relative w-full lg:w-1/2 h-56 sm:h-80 md:h-96 lg:h-[500px] order-2 lg:order-1 mt-6 sm:mt-0"
           >
             <ThreeScene className="w-full h-full" />
           </motion.div>

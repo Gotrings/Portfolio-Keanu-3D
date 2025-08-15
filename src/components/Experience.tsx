@@ -94,7 +94,7 @@ const experienceData: ExperienceData = {
       },
       location: 'Cikarang Selatan, Kab.Bekasi, Indonesia',
       description: {
-        id: 'Membuat aplikasi menggunkan laravel untuk pembutan dashboard untuk track barang dan bertanggung jawab dalam pembuatan qr code untuk rak barang serta tracking truk.',
+        id: 'Membuat aplikasi menggunakan laravel untuk pembutan dashboard untuk track barang dan bertanggung jawab dalam pembuatan qr code untuk rak barang serta tracking truk.',
         en: 'Developing an application using Laravel for the creation of a dashboard for tracking goods and responsible for creating QR codes for rack goods as well as truck tracking.'
       },
       skills: ['Laravel', 'Dashboard', 'QR Code', 'Tracking', 'Excel']

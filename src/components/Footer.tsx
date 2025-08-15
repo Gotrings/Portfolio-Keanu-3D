@@ -27,8 +27,8 @@ export default function Footer({ language = 'id' }: FooterProps) {
   };
 
   return (
-    <footer className="relative py-12 bg-muted/30 border-t border-border/20">
-      <div className="container mx-auto px-6">
+    <footer className="relative py-8 sm:py-12 bg-muted/30 border-t border-border/20">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center space-y-6">
           {/* Copyright */}
           <motion.div
@@ -38,12 +38,12 @@ export default function Footer({ language = 'id' }: FooterProps) {
             viewport={{ once: true }}
             className="space-y-2"
           >
-            <p className="flex items-center justify-center text-muted-foreground">
+            <p className="flex flex-wrap items-center justify-center text-muted-foreground text-sm sm:text-base px-2">
               {t.copyright}
-              <Heart className="h-4 w-4 mx-2 text-red-500 animate-pulse" />
+              <Heart className="h-4 w-4 mx-1 sm:mx-2 text-red-500 animate-pulse flex-shrink-0" />
               {language === 'id' ? 'dan teknologi terdepan' : 'and cutting-edge technology'}
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground px-4">
               {t.rights}
             </p>
           </motion.div>
@@ -56,15 +56,15 @@ export default function Footer({ language = 'id' }: FooterProps) {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="w-24 h-px bg-gradient-primary opacity-50" />
+            <div className="w-16 sm:w-24 h-px bg-gradient-primary opacity-50" />
           </motion.div>
         </div>
       </div>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-32 h-32 bg-primary rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-accent rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-3 sm:opacity-5">
+        <div className="absolute top-0 left-1/4 w-20 h-20 sm:w-32 sm:h-32 bg-primary rounded-full blur-2xl sm:blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-16 h-16 sm:w-24 sm:h-24 bg-accent rounded-full blur-2xl sm:blur-3xl" />
       </div>
     </footer>
   );
