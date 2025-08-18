@@ -20,12 +20,19 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Ensure public directory is copied as-is
+  publicDir: 'public',
   build: {
     assetsDir: 'assets',
     assetsInlineLimit: 0, // Force all assets to be emitted as files
+    copyPublicDir: true, // Ensure public directory is copied
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo: { name?: string, source?: string | Uint8Array, type: string }) => {
+          // Keep favicon files in root
+          if (assetInfo.name?.match(/\.(ico|png|svg|webmanifest)$/)) {
+            return '[name][extname]';
+          }
           // Handle case where name might be undefined
           const fileName = assetInfo.name || 'asset';
           const info = fileName.split('.');
