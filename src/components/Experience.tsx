@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Award, Users, Briefcase } from 'lucide-react';
 import { useState } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 // Import images using Vite's import.meta.glob for better production support
 const images = import.meta.glob('@/assets/*.{jpg,jpeg,png,svg}', { eager: true, as: 'url' });
@@ -571,15 +571,18 @@ export default function Experience({ language = 'id' }: ExperienceProps) {
                       
                       <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
                         <DialogContent className="border-none shadow-none max-w-[70vw] max-h-[95vh]">
-                          <div className="relative">
-                            {selectedImage && (
-                              <img 
-                                src={selectedImage} 
-                                alt="Enlarged view" 
-                                className="max-w-full max-h-[85vh] w-auto h-auto mx-auto object-contain rounded-lg"
-                              />
-                            )}
-                          </div>
+                          <DialogTitle className="sr-only">Certificate View</DialogTitle>
+                          <DialogDescription className="p-0 m-0">
+                            <div className="relative">
+                              {selectedImage && (
+                                <img 
+                                  src={selectedImage} 
+                                  alt="Certificate" 
+                                  className="w-full h-auto max-h-[90vh] object-contain"
+                                />
+                              )}
+                            </div>
+                          </DialogDescription>
                         </DialogContent>
                       </Dialog>
                     </Card>
