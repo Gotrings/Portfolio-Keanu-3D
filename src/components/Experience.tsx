@@ -3,41 +3,27 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Award, Users, Briefcase } from 'lucide-react';
 import { useState } from 'react';
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 
-// Import images using Vite's import.meta.glob for better production support
-type ImageModule = { default: string };
-const images = import.meta.glob<ImageModule>('@/assets/*.{jpg,jpeg,png,svg}', { 
-  query: '?url',
-  import: 'default',
-  eager: true 
-});
-
-// Helper function to get image URL
-export const getImageUrl = (imageName: string): string => {
-  const key = Object.keys(images).find(key => key.includes(imageName));
-  return key ? images[key].default : '';
-};
-
-// Image paths
-const Belajar1Images: string = getImageUrl('Belajar Dasar Git dengan GitHub');
-const Belajar2Images: string = getImageUrl('Belajar Dasar Pemrograman JavaScript');
-const Belajar3Images: string = getImageUrl('Belajar Back-End Pemula dengan JavaScript');
-const Belajar4Images: string = getImageUrl('Belajar Dasar Pemrograman Web');
-const Belajar5Images: string = getImageUrl('Belajar Fundamental Front-End Web Development');
-const Belajar6Images: string = getImageUrl('Belajar Membuat Front End Web untuk Pemula');
-const Belajar7Images: string = getImageUrl('Belajar Pengembangan Web Intermediate');
-const Belajar9Images: string = getImageUrl('Memulai Dasar Pemrograman Untuk Menajdi Pengembang Software');
-const Belajar10Images: string = getImageUrl('Pengenalan ke Logika Pemrograman');
-const Belajar11Images: string = getImageUrl('Finacial Literacy');
-const sertifikat1Images: string = getImageUrl('English Sertificate');
-const sertifikat2Images: string = getImageUrl('standar-1');
-const sertifikat3Images: string = getImageUrl('Coding Camp 2025-1');
-const sertifikat4Images: string = getImageUrl('Coding Camp 2025-2');
-const sertifikat5Images: string = getImageUrl('Coding Camp 2025-3');
-const magang1Images: string = getImageUrl('magang-1');
-const UIUX1Image: string = getImageUrl('UIUX-1');
-const UIUX2Image: string = getImageUrl('UI-UX-2');
+// Import images for certificates and experiences
+import Belajar1Images from '@/assets/Belajar Dasar Git dengan GitHub.jpg';
+import Belajar2Images from '@/assets/Belajar Dasar Pemrograman JavaScript.jpg';
+import Belajar3Images from '@/assets/Belajar Back-End Pemula dengan JavaScript.jpg';
+import Belajar4Images from '@/assets/Belajar Dasar Pemrograman Web.jpg';
+import Belajar5Images from '@/assets/Belajar Fundamental Front-End Web Development.jpg';
+import Belajar6Images from '@/assets/Belajar Membuat Front End Web untuk Pemula.jpg';
+import Belajar7Images from '@/assets/Belajar Pengembangan Web Intermediate.jpg';
+import Belajar9Images from '@/assets/Memulai Dasar Pemrograman Untuk Menajdi Pengembang Software.jpg';
+import Belajar10Images from '@/assets/Pengenalan ke Logika Pemrograman.jpg';
+import Belajar11Images from '@/assets/Finacial Literacy.jpg';
+import sertifikat1Images from '@/assets/English Sertificate.jpg';
+import sertifikat2Images from '@/assets/standar-1.jpg';
+import sertifikat3Images from '@/assets/Coding Camp 2025-1.jpg';
+import sertifikat4Images from '@/assets/Coding Camp 2025-2.jpg';
+import sertifikat5Images from '@/assets/Coding Camp 2025-3.jpg';
+import magang1Images from '@/assets/magang-1.jpg';
+import UIUX1Image from '@/assets/UIUX-1.jpg';
+import UIUX2Image from '@/assets/UI-UX-2.jpg';
 
 type ExperienceItem = {
   title: {
@@ -576,18 +562,15 @@ export default function Experience({ language = 'id' }: ExperienceProps) {
                       
                       <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
                         <DialogContent className="border-none shadow-none max-w-[70vw] max-h-[95vh]">
-                          <DialogTitle className="sr-only">Certificate View</DialogTitle>
-                          <DialogDescription className="p-0 m-0">
-                            <div className="relative">
-                              {selectedImage && (
-                                <img 
-                                  src={selectedImage} 
-                                  alt="Certificate" 
-                                  className="w-full h-auto max-h-[90vh] object-contain"
-                                />
-                              )}
-                            </div>
-                          </DialogDescription>
+                          <div className="relative">
+                            {selectedImage && (
+                              <img 
+                                src={selectedImage} 
+                                alt="Enlarged view" 
+                                className="max-w-full max-h-[85vh] w-auto h-auto mx-auto object-contain rounded-lg"
+                              />
+                            )}
+                          </div>
                         </DialogContent>
                       </Dialog>
                     </Card>
