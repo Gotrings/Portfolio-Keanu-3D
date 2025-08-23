@@ -6,7 +6,7 @@ import type { Plugin } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: './', // Add this line to ensure correct asset paths
+  base: './',
   server: {
     host: "::",
     port: 8080,
@@ -36,9 +36,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
   ].filter(Boolean) as Plugin[],
-  esbuild: {
-    jsxInject: `import React from 'react'`
-  },
+  // Removed automatic React import to prevent conflicts with existing imports
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -6,33 +6,38 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 // Import images using Vite's import.meta.glob for better production support
-const images = import.meta.glob('@/assets/*.{jpg,jpeg,png,svg}', { eager: true, as: 'url' });
+type ImageModule = { default: string };
+const images = import.meta.glob<ImageModule>('@/assets/*.{jpg,jpeg,png,svg}', { 
+  query: '?url',
+  import: 'default',
+  eager: true 
+});
 
 // Helper function to get image URL
-export const getImageUrl = (imageName: string) => {
+export const getImageUrl = (imageName: string): string => {
   const key = Object.keys(images).find(key => key.includes(imageName));
-  return key ? images[key] : '';
+  return key ? images[key].default : '';
 };
 
 // Image paths
-const Belajar1Images = getImageUrl('Belajar Dasar Git dengan GitHub');
-const Belajar2Images = getImageUrl('Belajar Dasar Pemrograman JavaScript');
-const Belajar3Images = getImageUrl('Belajar Back-End Pemula dengan JavaScript');
-const Belajar4Images = getImageUrl('Belajar Dasar Pemrograman Web');
-const Belajar5Images = getImageUrl('Belajar Fundamental Front-End Web Development');
-const Belajar6Images = getImageUrl('Belajar Membuat Front End Web untuk Pemula');
-const Belajar7Images = getImageUrl('Belajar Pengembangan Web Intermediate');
-const Belajar9Images = getImageUrl('Memulai Dasar Pemrograman Untuk Menajdi Pengembang Software');
-const Belajar10Images = getImageUrl('Pengenalan ke Logika Pemrograman');
-const Belajar11Images = getImageUrl('Finacial Literacy');
-const sertifikat1Images = getImageUrl('English Sertificate');
-const sertifikat2Images = getImageUrl('standar-1');
-const sertifikat3Images = getImageUrl('Coding Camp 2025-1');
-const sertifikat4Images = getImageUrl('Coding Camp 2025-2');
-const sertifikat5Images = getImageUrl('Coding Camp 2025-3');
-const magang1Images = getImageUrl('magang-1');
-const UIUX1Image = getImageUrl('UIUX-1');
-const UIUX2Image = getImageUrl('UI-UX-2');
+const Belajar1Images: string = getImageUrl('Belajar Dasar Git dengan GitHub');
+const Belajar2Images: string = getImageUrl('Belajar Dasar Pemrograman JavaScript');
+const Belajar3Images: string = getImageUrl('Belajar Back-End Pemula dengan JavaScript');
+const Belajar4Images: string = getImageUrl('Belajar Dasar Pemrograman Web');
+const Belajar5Images: string = getImageUrl('Belajar Fundamental Front-End Web Development');
+const Belajar6Images: string = getImageUrl('Belajar Membuat Front End Web untuk Pemula');
+const Belajar7Images: string = getImageUrl('Belajar Pengembangan Web Intermediate');
+const Belajar9Images: string = getImageUrl('Memulai Dasar Pemrograman Untuk Menajdi Pengembang Software');
+const Belajar10Images: string = getImageUrl('Pengenalan ke Logika Pemrograman');
+const Belajar11Images: string = getImageUrl('Finacial Literacy');
+const sertifikat1Images: string = getImageUrl('English Sertificate');
+const sertifikat2Images: string = getImageUrl('standar-1');
+const sertifikat3Images: string = getImageUrl('Coding Camp 2025-1');
+const sertifikat4Images: string = getImageUrl('Coding Camp 2025-2');
+const sertifikat5Images: string = getImageUrl('Coding Camp 2025-3');
+const magang1Images: string = getImageUrl('magang-1');
+const UIUX1Image: string = getImageUrl('UIUX-1');
+const UIUX2Image: string = getImageUrl('UI-UX-2');
 
 type ExperienceItem = {
   title: {
