@@ -7,12 +7,7 @@
       "config": {
         "distDir": "dist",
         "outputDirectory": "dist"
-      },
-      "routes": [
-        { "src": "/favicon.ico", "dest": "/favicon.ico" },
-        { "src": "/favicon-16x16.png", "dest": "/favicon-16x16.png" },
-        { "src": "/favicon-32x32.png", "dest": "/favicon-32x32.png" }
-      ]
+      }
     }
   ],
   "routes": [
