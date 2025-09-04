@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://keanu-dustin-kemala.vercel.app/sitemap.xml
