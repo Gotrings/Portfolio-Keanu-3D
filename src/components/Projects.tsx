@@ -10,6 +10,7 @@ import nutrieduImage from '@/assets/nutriedu.png';
 import himtechImage from '@/assets/himtech.png';
 import politeknikImage from '@/assets/politeknik.png';
 import cafeImage from '@/assets/cafe.png';
+import cinemaImage from '@/assets/cinefusion.png';
 
 const translations = {
   id: {
@@ -64,7 +65,7 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Prototype Profle Cafe',
+    title: 'Prototype Profile Cafe',
     description: {
       id: 'Design prototype profile cafe dengan desain yang modern dan responsif.',
       en: 'Design prototype profile cafe with modern and responsive design.'
@@ -72,7 +73,7 @@ const projects = [
     category: 'uiux',
     technologies: ['Figma', 'Photoshop', 'Canva'],
     image: cafeImage,
-    liveUrl: '#',
+    liveUrl: 'https://www.figma.com/design/NvCiLbyPLEGo692FBsupSv/Cafe-Apps?node-id=1102-2&t=MbOImQPt5SRzLEci-1',
   },
   {
     id: 4,
@@ -85,6 +86,18 @@ const projects = [
     technologies: ['Figma', 'Photoshop', 'Canva'],
     image: politeknikImage,
     liveUrl: 'https://www.figma.com/design/rkSXZXEtDOUOUarNBuBqhT/Politeknik-Meta?node-id=5-2509&t=zhC4TSiNsT8uuJDu-1',
+  },
+  {
+    id: 5,
+    title: 'Prototype Cinefusion',
+    description: {
+      id: 'Aplikasi streaming film dengan desain yang modern dan responsif.',
+      en: 'Streaming movie application with modern and responsive design.'
+    },
+    category: 'uiux',
+    technologies: ['Figma', 'Photoshop', 'Canva'],
+    image: cinemaImage,
+    liveUrl: 'https://www.figma.com/design/Hoa5UkBI2sgoUnwWJ1ODK0/Cinefusion?node-id=2-2&t=KMFwsFMnRUMSYTtT-1',
   }
 ];
 
